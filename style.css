@@ -1,0 +1,56 @@
+.main{
+    background-color: rgb(197, 202, 203);
+    height: 100vh;
+    
+ 
+   
+}
+h1{
+    text-align: center;
+    color:white;
+    padding: 20px;
+    font-weight: bold;
+
+}
+
+.ring{
+    position: relative;
+    height: 220px;
+    width: 220px;
+    background: aqua;
+    display: grid;
+    border-radius: 50%;
+    place-items: center;
+    margin: 0 auto;
+}
+.ring:before{
+    content:"";
+    position:absolute;
+    height: 74%;
+    width:74%;
+    background-color: rgb(197, 202, 203);
+    border-radius: 50%;
+}
+.valueContainer{
+    position: relative;
+    color: aqua;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.submitButton{
+
+    color:white;
+    border-radius: 4px;
+    width: 100px;
+    background-color: aqua;
+    border-color: aqua;
+    font-weight: bold;
+
+}
+ .submitButton:hover{
+    border-color: rgb(87, 154, 205);
+ 
+
+ }
+

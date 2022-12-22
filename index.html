@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Word guess App</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+	<!-- <script src="bower_components/angular/angular.js"></script> -->
+	<script src="app.js"></script>
+	<script src="animate.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body ng-app="app1" ng-controller="GameController">
+<div class="main">
+	<h1>WORDS GUESS GAME</h1>	
+	<div class="ring">
+		<span class="valueContainer">{{guesses}}</span>
+	</div>
+
+	<div class="row p-3">
+		<div class="col">
+			<p class="text-center"><i style="color: rgb(236, 74, 74);" class="fa fa-thumbs-down fa-5x"></i></p>
+		</div>
+		<div class="col">
+			<h3 class="text-center">{{displayWord}}</h3>
+		</div>
+		<div class="col">
+			<p class="text-center"><i style="color: rgb(74, 193, 74);" class="fa fa-thumbs-up fa-5x"></i></p>
+		</div>
+	</div> 
+	<div class="row">
+		<div class="col">
+			<h3 class="text-center"><span style="text-decoration: line-through"  ng-repeat="letter in incorrectLettersChosen">{{letter}}</span></h3>
+		</div>
+		<div class="col">
+			<p class="text-center"><input style="border-color:white" type="text" name="guess" ng-model="input.letter" ng-minlength="1" ng-maxlength="1" ng-pattern="/^[A-Za-z]+$/"></p>
+		</div>
+		<div class="col">
+			<h3 class="text-center"><span  ng-repeat="letter in correctLettersChosen">{{letter}}</span></h3>
+		</div>
+	</div> 
+
+	<div class="row">
+		<p style="margin:0 auto"><button class="submitButton" ng-click="letterChosen()">SUBMIT</button></p>
+
+	</div>
+
+
+
+</div>
+</body>
+</html>
